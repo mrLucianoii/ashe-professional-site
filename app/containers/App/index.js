@@ -30,15 +30,18 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Ashe Rain Turner"
+        defaultTitle="Ashe Rain Turner"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="Ashe Rain Turner" />
       </Helmet>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route path="/gallary" component={FeaturePage} />
+        <Route path="/bio" component={FeaturePage} />
+        <Route path="/resume" component={FeaturePage} />
+
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

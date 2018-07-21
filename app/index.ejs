@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- The first thing in any HTML file should be the charset -->
+    <!-- The first HI thing in any HTML file should be the charset -->
     <meta charset="utf-8">
 
     <!-- Make the page mobile compatible -->
@@ -17,8 +17,12 @@
     <link rel="apple-touch-icon" sizes="167x167" href="/icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/icon-180x180.png">
 
+    <link rel="stylesheet" href="https://use.typekit.net/hww5ora.css">
+
     <link rel="icon" href="/favicon.ico" />
-    <title>React.js Boilerplate</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- Testing -->
   </head>
   <body>
     <!-- Display a message if JS has been disabled on the browser. -->
@@ -28,6 +32,5 @@
     <div id="app"></div>
     <!-- Open Sans Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out the webpack config files in internals/webpack for details) -->
   </body>
 </html>

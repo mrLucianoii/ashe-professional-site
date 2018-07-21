@@ -10,42 +10,11 @@
     "npm": ">=5",
     "node": ">=8"
   },
-  "author": "Max Stoiber",
+  "author": "Luciano Santiago Aldana II",
   "license": "MIT",
   "scripts": {
-    "analyze:clean": "rimraf stats.json",
-    "preanalyze": "npm run analyze:clean",
-    "analyze": "node ./internals/scripts/analyze.js",
-    "extract-intl": "node ./internals/scripts/extract-intl.js",
-    "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
-    "preinstall": "npm run npmcheckversion",
-    "postinstall": "npm run build:dll",
-    "prebuild": "npm run build:clean",
-    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
-    "build:clean": "rimraf ./build",
-    "build:dll": "node ./internals/scripts/dependencies.js",
-    "start": "cross-env NODE_ENV=development node server",
-    "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
-    "start:production": "npm run test && npm run build && npm run start:prod",
-    "start:prod": "cross-env NODE_ENV=production node server",
-    "presetup": "npm i chalk shelljs",
-    "setup": "node ./internals/scripts/setup.js",
-    "postsetup": "npm run build:dll",
-    "clean": "shjs ./internals/scripts/clean.js",
-    "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",
-    "generate": "plop --plopfile internals/generators/index.js",
-    "lint": "npm run lint:js && npm run lint:css",
-    "lint:css": "stylelint './app/**/*.js'",
-    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
-    "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
-    "lint:js": "npm run lint:eslint -- . ",
-    "lint:staged": "lint-staged",
-    "pretest": "npm run test:clean && npm run lint",
-    "test:clean": "rimraf ./coverage",
-    "test": "cross-env NODE_ENV=test jest --coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prettify": "prettier --write"
+    "deploy:prod": "webpack --config webpack.config.js --mode=production",
+    "start:dev": "webpack-dev-server --mode=development"
   },
   "lint-staged": {
     "*.js": [
@@ -90,23 +59,6 @@
         ]
       }
     }
-  },
-  "dllPlugin": {
-    "path": "node_modules/react-boilerplate-dlls",
-    "exclude": [
-      "chalk",
-      "compression",
-      "cross-env",
-      "express",
-      "ip",
-      "minimist",
-      "sanitize.css"
-    ],
-    "include": [
-      "core-js",
-      "lodash",
-      "eventsource-polyfill"
-    ]
   },
   "jest": {
     "collectCoverageFrom": [
@@ -195,6 +147,7 @@
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "circular-dependency-plugin": "5.0.2",
+    "clean-webpack-plugin": "^0.1.19",
     "coveralls": "3.0.1",
     "css-loader": "0.28.11",
     "enzyme": "3.3.0",
@@ -241,6 +194,7 @@
     "webpack": "4.12.0",
     "webpack-cli": "3.0.8",
     "webpack-dev-middleware": "3.1.3",
+    "webpack-dev-server": "^3.1.4",
     "webpack-hot-middleware": "2.22.2",
     "webpack-pwa-manifest": "3.6.2"
   }

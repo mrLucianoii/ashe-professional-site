@@ -6,6 +6,8 @@ import LocaleToggle from 'containers/LocaleToggle';
 import Wrapper from './Wrapper';
 import messages from './messages';
 
+
+
 function Footer() {
   return (
     <Wrapper>
@@ -19,7 +21,7 @@ function Footer() {
         <FormattedMessage
           {...messages.authorMessage}
           values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
+            author: <A href="https://www.linkedin.com/in/luciano1st/">Luciano S. Aldana II</A>,
           }}
         />
       </section>

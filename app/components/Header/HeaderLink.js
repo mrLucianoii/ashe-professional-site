@@ -12,7 +12,6 @@ export default styled(Link)`
   cursor: pointer;
   outline: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: bold;
   font-size: 16px;
   color: #f3f3f3;
   float: right;

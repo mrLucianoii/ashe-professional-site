@@ -2,7 +2,7 @@
 
 exports[`<RepoLink /> should match the snapshot 1`] = `
 .c0 {
-  color: #41addd;
+  color: #35476d;
   height: 100%;
   color: black;
   display: -webkit-box;

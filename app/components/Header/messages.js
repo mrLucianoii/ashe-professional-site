@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'boilerplate.components.Header.gallary',
     defaultMessage: 'Gallary',
   },
+  reel: {
+    id: 'boilerplate.components.Header.reel',
+    defaultMessage: 'Reel',
+  }
 });

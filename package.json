@@ -14,7 +14,9 @@
   "license": "MIT",
   "scripts": {
     "deploy:prod": "webpack --config webpack.config.js --mode=production",
-    "start:dev": "webpack-dev-server --mode=development"
+    "start:dev": "webpack-dev-server --mode=development",
+    "test": "cross-env NODE_ENV=test jest --coverage"
+
   },
   "lint-staged": {
     "*.js": [
